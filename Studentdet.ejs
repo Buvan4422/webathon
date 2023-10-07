@@ -1,0 +1,113 @@
+<!-- Your EJS template (e.g., student.ejs) -->
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 270px;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      background-color: #51414f;
+      overflow-x: hidden;
+      padding-top: 20px;
+      margin-bottom: 10px;
+      line-height: 2.3;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .main {
+      margin-left: 280px; /* Same as the width of the sidenav */
+      font-size: 20px; /* Increased text to enable scrolling */
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <body style="background-color: linear-gradient(45deg, #3f87a6, #ebf8e1)">
+    <div
+      style="background-color: white; border: 2px solid black; margin-top: 20px"
+    >
+      <h1 style="text-align: center; background-color: white">College Name</h1>
+    </div>
+    <br />
+
+    <div class="sidenav">
+      <a href="Edit_profile.html">Edit Profile</a>
+      <a href="Password.html" target="_blank">Change Password</a>
+      <a href="Placement_history.html">Placement Status</a>
+      <a href="Stu_notification.html">Notifications</a>
+    </div>
+    <div class="main" style="line-height: 1">
+        <div
+          style="
+            background-color: #ff5733;
+            border: 2px solid #ff5733;
+            margin-top: 10px;
+            height: 16vh;
+            font-size: 23px;
+          "
+        >
+          <% students.forEach(function(student) { %>
+          <div
+            style="
+              background-color: #ff5733;
+              border: 2px solid #ff5733;
+              margin-top: 10px;
+              height: 16vh;
+              font-size: 23px;
+            "
+          >
+          <div class="main" style="line-height: 1">
+            <% students.forEach(function(student) { %>
+              <div
+                style="
+                  background-color: #ff5733;
+                  border: 2px solid #ff5733;
+                  margin-top: 10px;
+                  height: 16vh;
+                  font-size: 23px;
+                "
+              >
+                <p style="text-align: center"><%= student.fname %></p>
+                <p></p>
+              </div>
+              <br />
+              <div style="border: 2px solid white; float: left; margin-right: 35%">
+                <b style="font-size: 23px">Academic Details: </b>
+                <p>Programme: Bachelore of technology</p>
+                <p>Branch: <%= student.department_id %></p>
+              </div>
+              <div style="border: 2px solid white">
+                <b style="font-size: 23px">Personal Details: </b>
+                <p>Date of Birth: <%= student.dob %></p>
+                <p>Phone no: <%= student.phone_number %></p>
+                <p>Email Id: <%= student.email %></p>
+              </div>
+            <% }); %>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
