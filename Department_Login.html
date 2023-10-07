@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Added some additional styles for design -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #3f87a6, #ebf8e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: -50px auto 20px;
+            display: block;
+            background-image: url('https://e7.pngegg.com/pngimages/894/494/png-clipart-black-male-symbol-art-avatar-education-professor-user-profile-faculty-boss-face-heroes.png'); /* Replace with your image URL */
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container h2 {
+            color: #333;
+        }
+
+        .login-container label {
+            display: block;
+            margin-top: 16px;
+            text-align: left;
+            color: #555;
+        }
+
+        .login-container input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input:hover,
+        .login-container input:focus {
+            border-color: #4caf50;
+        }
+
+        .login-container button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo"></div>
+    <h2>Login</h2>
+    <form action="Depatment.html" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" style="margin-top: 5px;">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

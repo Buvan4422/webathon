@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Data Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Placement Data</h2>
+
+<table id="placementTable">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">S.No</th>
+            <th onclick="sortTable(1)">&uarr; &nbsp;Student ID</th>
+            <th onclick="sortTable(2)">&uarr; &nbsp;Company Name</th>
+            <th onclick="sortTable(3)">&uarr;&nbsp;Package</th>
+            <th onclick="sortTable(4)">&uarr;&nbsp;Year of Passing Outs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>1001</td>
+            <td>ABC Corp</td>
+            <td>50000</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>1002</td>
+            <td>XYZ Ltd</td>
+            <td>60000</td>
+            <td>2021</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1003</td>
+            <td>DEF Inc</td>
+            <td>55000</td>
+            <td>2022</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+<script>
+    function sortTable(columnIndex) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("placementTable");
+        switching = true;
+
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < rows.length - 1; i++) {
+                shouldSwitch = false;
+
+                x = rows[i].getElementsByTagName("td")[columnIndex];
+                y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+                if (isNaN(x.innerHTML)) {
+                    shouldSwitch = x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase();
+                } else {
+                    shouldSwitch = Number(x.innerHTML) > Number(y.innerHTML);
+                }
+
+                if (shouldSwitch) {
+                    // Swap rows
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+
+                    // Update S.No column
+                    updateSNoColumn();
+
+                    break;
+                }
+            }
+        }
+    }
+
+    function updateSNoColumn() {
+        var table = document.getElementById("placementTable");
+        var rows = table.rows;
+
+        // Update S.No column based on the current order
+        for (var i = 1; i < rows.length; i++) {
+            rows[i].getElementsByTagName("td")[0].innerHTML = i;
+        }
+    }
+</script>
+
+</body>
+</html>

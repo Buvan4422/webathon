@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 270px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: 	#51414F;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  line-height: 2.3;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 280px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body style="background-color:  linear-gradient(45deg, #3f87a6, #ebf8e1);">
+    <div style="background-color: white ;border: 2px solid black;margin-top: 20px;">
+        <h1 style="text-align: center;
+            background-color: white ;">College Name </h1>
+    </div><br>
+    
+<div class="sidenav">
+    <a href="Edit_profile.html" target="_blank">Edit Profile</a>
+    <a href="Password.html" target="_blank">Change Password</a>
+    <a href="Placement_history.html"target="_blank">Placement Status</a>
+    <a href="Stu_notification.html" target="_blank">Notifications</a>
+  </div>
+  
+  <div class="main" style="line-height: 1;">
+    <div style="background-color: #FF5733 ;border: 2px solid #FF5733;height: 16vh;font-size: 23px;">
+        <p style="text-align: center;">Student Name </p>
+        <p style="text-align: center;">[Roll]<p>
+    </div><br>
+    <div style="border: 2px solid white;float: left;margin-right: 35%;">
+        <b style="font-size: 23px;">Academic Details: </b>
+        <p>Programme:</p>
+        <p>Branch: </p>
+    </div>
+    <div style="border: 2px solid white;">
+        <b style="font-size: 23px;">Personal Details: </b>
+        <p>Date of Birth: </p>
+        <p>Phone no: </p>
+        <p>Email Id: </p>
+    </div>
+  </div>
+
+   
+</body>
+</html> 

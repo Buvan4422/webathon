@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #3f87a6, #ebf8e1);
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 270px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            background-color: #51414F;
+            overflow-x: hidden;
+            padding-top: 20px;
+            margin-bottom: 10px;
+            line-height: 2.3;
+        }
+
+        .sidenav a {
+            padding: 10px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            background-color: #3f87a6;
+        }
+
+        .main {
+            margin-left: 290px; /* Adjusted to allow for the sidebar width */
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        .main h1 {
+            font-size: 30px;
+            color: #51414F;
+        }
+
+        .main form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .main label {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .main input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            max-width: 450px;
+        }
+
+        .main input[type="submit"] {
+            background-color: #51414F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .main input[type="submit"]:hover {
+            background-color: #3f87a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <a href="upload_details.html" target="_blank">Upload Results</a>
+        <a href="notifications.html" target="_blank">Sent Notifications</a>
+        <a href="manage_data.html" target="_blank">Manage/Edit Data</a>
+        <a href="report.html" target="_blank">Report</a>
+    </div>
+    <div class="main">
+        <h1>Student Details</h1>
+        <form id="studentForm" action="Details.html" target="_blank">
+            <label for="studentNo">Enter Student No:&nbsp;</label>
+            <input type="text" id="studentNo" name="studentNo" required>
+            <br>
+            <input type="submit" value="Get Details">
+        </form>
+    </div>
+</body>
+</html>
